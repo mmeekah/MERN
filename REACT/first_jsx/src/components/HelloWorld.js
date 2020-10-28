@@ -5,7 +5,6 @@ class HelloWorldComponent extends Component {
     return (
         <div>
         <h1>Hello Dojo!</h1>
-        
         </div>
         
         )
