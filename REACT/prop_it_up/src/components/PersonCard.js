@@ -1,6 +1,21 @@
 import React, { Component } from 'react'
 
 export class PersonCard extends Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            clickAge: props.age
+        }
+    }
+
+    handleClick = () => {
+        this.setState({
+            clickAge: this.state.clickAge + 1
+        })
+    }
+
+
     render() {
         const { firstName, lastName, age, hair } = this.props;
         return (
@@ -9,9 +24,10 @@ export class PersonCard extends Component {
                 <ul>
                     <li> 
                         <h1>{firstName},{lastName} </h1>
-                        <p>Age: {age}</p>
+                        <p>Age: {this.state.clickAge}</p>
                         <p>Hair Color: {hair}</p> 
                     </li>
+                    <button onClick={this.handleClick}>Birthday Button for {firstName} {lastName}</button>
                     
                 </ul>
             </div>

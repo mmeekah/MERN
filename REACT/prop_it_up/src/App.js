@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import './App.css';
 import PersonCard from './components/PersonCard';
+import LightSwitch from './components/LightSwitch';
+import Comment from './components/Comment';
 
 // function App() {
 //   return (
@@ -48,10 +50,24 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <PersonCard  firstName = {"Jane"} lastName ={"Doe"} age ={30} hair ={"brunette"}/>
-        <PersonCard  firstName = {"Mika"} lastName ={"Ait"} age ={27} hair ={"brunette"}/>
-        <PersonCard  firstName = {"Rassul"} lastName ={"Aitassov"} age ={32} hair ={"brunette"}/>
-        <PersonCard  firstName = {"Alim"} lastName ={"Hamza"} age ={4} hair ={"brunette"}/>
+          <PersonCard  firstName = {"Jane"} lastName ={"Doe"} age ={30} hair ={"brunette"}>
+    
+          </PersonCard>
+          
+          
+          <PersonCard  firstName = {"Mika"} lastName ={"Ait"} age ={27} hair ={"brunette"}>
+            
+          </PersonCard>
+
+          <PersonCard  firstName = {"Rassul"} lastName ={"Aitassov"} age ={32} hair ={"brunette"}>
+            
+          </PersonCard>
+
+          <PersonCard  firstName = {"Alim"} lastName ={"Hamza"} age ={4} hair ={"brunette"}> 
+            
+          </PersonCard>
+          
+          <LightSwitch>LIGHTSWITCH</LightSwitch>
         
       </div>
     )
