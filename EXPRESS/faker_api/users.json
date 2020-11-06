@@ -1,0 +1,35 @@
+[33m[nodemon] 2.0.6[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node server.js`[39m
+Product {
+  name: 'Licensed Granite Computer',
+  price: '$277.00',
+  department: 'Tools'
+}
+User {
+  firstName: 'Salma',
+  lastName: 'Klein',
+  phoneNumber: '524-271-2796',
+  email: 'Anna47@gmail.com',
+  password: 'FsDzOrSPwDM2uHo'
+}
+Address {
+  street: '329 Hahn Motorway',
+  city: 'South Michaela',
+  state: 'California',
+  zipCode: '96994-7138',
+  country: 'Cocos (Keeling) Islands'
+}
+Company {
+  name: 'Jones - Trantow',
+  address: Address {
+    street: '329 Hahn Motorway',
+    city: 'South Michaela',
+    state: 'California',
+    zipCode: '96994-7138',
+    country: 'Cocos (Keeling) Islands'
+  }
+}
+Server is listening on port 8000
