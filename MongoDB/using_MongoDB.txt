@@ -1,0 +1,43 @@
+> use my_first_db
+switched to db my_first_db
+> show collections
+students
+> db.students.insert({name: 'Mika', home_state: 'MA', luck_number: 7, birthday: {month: 10, day: 7, year: 1993}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name: 'Rassul', home_state: 'MA', luck_number: 3, birthday: {month: 3, day: 30, year: 1989}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name: 'Alim', home_state: 'MA', luck_number: 7, birthday: {month: 07, day: 20, year: 2016}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name: 'Rabiya', home_state: 'SH', luck_number: 5, birthday: {month: 9, day: 5, year: 1964}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name: 'Gulnara', home_state: 'AS', luck_number: 8, birthday: {month: 8, day: 15, year: 1965}})
+WriteResult({ "nInserted" : 1 })
+> db.students.find().pretty()
+> db.students.find({home_state: 'MA'}).pretty()
+> db.students.find({$or: [{home_state: 'MA'}, {home_state: 'SH'}]}).pretty()
+> db.students.find({luck_number: {$gt: 3}}).pretty()
+> db.students.find({luck_number: {$lte: 10}}).pretty()
+> db.students.find({$and: [{luck_number: {$gte: 1}}, {luck_number: {$lte: 9}}]}).pretty()
+> db.students.updateMany({}, {$set: {interests: ['coding', 'brunch', 'MongoDB']}})
+> db.students.find({}).pretty()
+> db.students.update({_id: ObjectId("5fa59e2208e25cb3dba77fbd")}, {$addToSet: {interests: 'design'}})
+
+> db.students.update({_id: ObjectId("5fa59e6008e25cb3dba77fbf")}, {$addToSet: {interests: 'lego'}})
+
+> db.students.update({_id: ObjectId("5fa59e4208e25cb3dba77fbe")}, {$addToSet: {interests: 'running'}})
+
+> db.students.find({}).pretty()
+>db.students.update({_id: ObjectId("5fa59ea208e25cb3dba77fc0")}, {$addToSet: {interests: 'taxes'}})
+> db.students.update({_id: ObjectId("5fa59ea208e25cb3dba77fc0")}, {$pull: {interests: 'taxes'}})
+> db.students.remove({home_state: 'AS'})
+> db.students.remove({name: 'Gulnara'})
+> db.students.remove({name: 'Rabiya'})
+> db.students.remove({luck_number: 5}, true)
+> db.students.updateMany({}, {$set: {number_of_belts:0 }})
+> db.students.find({}).pretty()
+> db.students.updateMany({home_state: "MA"}, {$inc: {number_of_belts: 1}})
+> db.students.updateMany({}, {$rename: {'number_of_belts': 'belts_earned'}})
+> db.students.updateMany({}, {$unset: {luck_number: ''}})
+> db.students.find({}).pretty()
+> db.students.updateMany({}, {$currentDate: {updated_on: true}})
+> db.students.find({}).pretty()
