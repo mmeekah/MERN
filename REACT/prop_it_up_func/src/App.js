@@ -18,7 +18,7 @@ import PersonCard from './components/PersonCard';
 
 export class App extends Component {
   // state = {
-  //   users: [
+  //   person: [
   //     { 
   //       "firstName": "Jane",
   //       "lastName": "Doe",
@@ -67,6 +67,8 @@ export class App extends Component {
           </PersonCard>
           
           {/* <LightSwitch>LIGHTSWITCH</LightSwitch> */}
+
+  
         
       </div>
     )

@@ -1,12 +1,28 @@
-import logo from './logo.svg';
-import Main from './views/Main'
+
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/dist/slate/bootstrap.min.css';
 import './App.css';
+import { Router } from '@reach/router';
+import NavBar from './views/NavBar';
+import DisplayProduct from './components/DisplayProduct';
+import Home from './views/Home';
+import Edit from './components/Edit';
+import ProductForm from './components/ProductForm';
 
 function App() {
+
+
+
   return (
-    <div className="App">
-      
-      <Main/>
+    <div>
+      <NavBar />
+      <Router>
+        <ProductForm path='/new' />
+        <Home path='/' />
+        <DisplayProduct path='/api/products/:id' />
+        <Edit path='/products/:id/edit' />
+      </Router>
     </div>
   );
 }

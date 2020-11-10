@@ -18,17 +18,17 @@ const Action = (props) => {
         })
     }
 
-    const submitHandler = (e) =>{
-        e.preventDefault();
-        axios.get(`https://swapi.dev/api/${props.category}/${props.id}`)
-            .then(response =>{
-                setResults(response.data)
-                console.log(response)
-            })
+    // const submitHandler = (e) =>{
+    //     e.preventDefault();
+    //     axios.get(`https://swapi.dev/api/${props.category}/${props.id}`)
+    //         .then(response =>{
+    //             setResults(response.data)
+    //             console.log(response)
+    //         })
 
-            .catch(err => setError(true))
-            navigate(`/${input.category}/${input.id}`)
-    }
+    //         .catch(err => setError(true))
+    //         navigate(`/${input.category}/${input.id}`)
+    // }
 
     useEffect(() => {
         axios.get(`https://swapi.dev/api/${props.category}/${props.id}`)
@@ -70,7 +70,7 @@ const Action = (props) => {
             {
                 !error ?
                     Object.keys(results).map((item) =>
-                        <p>{item}: {results[item]}</p>) :
+                    <p key={item}> {item}: {results[item]}</p>) :
                     <Error />
             }
             </div>

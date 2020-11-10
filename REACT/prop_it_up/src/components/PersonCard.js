@@ -12,7 +12,9 @@ export class PersonCard extends Component {
     handleClick = () => {
         this.setState({
             clickAge: this.state.clickAge + 1
+            
         })
+        console.log(this.state.clickAge)
     }
 
 
